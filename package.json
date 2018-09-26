@@ -1,0 +1,32 @@
+{
+  "name": "templates",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/tian-dutoit/templates.git",
+  "author": "Tian",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack && node server",
+    "dev": "nodemon --watch server & webpack --watch"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  },
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.2",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "express": "^4.16.3",
+    "nodemon": "^1.18.4",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "webpack": "^4.20.2",
+    "webpack-dev-server": "^3.1.9"
+  }
+}
