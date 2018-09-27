@@ -11,16 +11,14 @@ class Example extends React.Component {
   }
 
   handleClick() {
-    console.log('pressing')
     this.props.dispatch(exampleAction())
   }
 
   render() {
-    console.log(this.props.example.toString())
     return(
     <div>
       <div className='example-container'></div>
-      <button onClick={this.handleClick}>Toggle Example</button>
+      <button onClick={this.handleClick}>Toggle Me</button>
       <div>Example: {this.props.example.toString()}</div>
     </div>
     )}

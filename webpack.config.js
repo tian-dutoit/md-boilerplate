@@ -17,16 +17,16 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx']
   },
-  plugins: [
-    new HtmlWebPackPlugin({
-      template: "./public/index.html",
-      filename: "./index.html"
-    }),
-    new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css"
-    })
-  ],
+  // plugins: [
+  //   new HtmlWebPackPlugin({
+  //     template: "./public/index.html",
+  //     filename: "./index.html"
+  //   }),
+  //   new MiniCssExtractPlugin({
+  //     filename: "[name].css",
+  //     chunkFilename: "[id].css"
+  //   })
+  // ],
   module: {
     rules: [
       {
