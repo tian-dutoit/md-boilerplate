@@ -12,6 +12,7 @@
     "build": "webpack --mode production"
   },
   "dependencies": {
+    "@material-ui/core": "^3.1.1",
     "express": "^4.16.3",
     "nodemon": "^1.18.4",
     "react": "^16.5.2",
