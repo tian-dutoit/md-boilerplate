@@ -1,1 +1,1 @@
-# React/Redux boilerplate with webpack 4+
+# Material-ui with React/Redux
