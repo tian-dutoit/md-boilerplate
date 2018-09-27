@@ -11,16 +11,19 @@ class Example extends React.Component {
   }
 
   handleClick() {
+    console.log('pressing')
     this.props.dispatch(exampleAction())
   }
 
   render() {
+    console.log(this.props.example.toString())
+    return(
     <div>
-      <div className='example-container'>Example is here</div>
-      <button>Toggle Example</button>
-      <div>{this.props.example}</div>
+      <div className='example-container'></div>
+      <button onClick={this.handleClick}>Toggle Example</button>
+      <div>Example: {this.props.example.toString()}</div>
     </div>
-  }
+    )}
 }
 
 const mapStateToProps = (state) => {

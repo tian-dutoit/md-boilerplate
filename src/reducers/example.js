@@ -1,10 +1,7 @@
 const example = (state = [], action) => {
   switch (action.type) {
     case 'EXAMPLE':
-      return {
-        ...state,
-        example: !state.example 
-  }
+      return !state
     default:
       return state
   }

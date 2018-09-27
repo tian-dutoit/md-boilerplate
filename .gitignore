@@ -1,4 +1,4 @@
 node_modules
 bundle*
 package-lock.json
-dist
+dist/*
