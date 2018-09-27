@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { example } from '../actions/example'
+import { exampleAction } from '../actions/example'
 
 class Example extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class Example extends React.Component {
   }
 
   handleClick() {
-    this.props.dispatch(example())
+    this.props.dispatch(exampleAction())
   }
 
   render() {

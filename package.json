@@ -1,16 +1,15 @@
 {
   "name": "templates",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "https://github.com/tian-dutoit/templates.git",
   "author": "Tian",
   "license": "MIT",
+  "main": "server/index.js",
   "scripts": {
-    "start": "webpack && node server",
-    "dev": "nodemon --watch server & webpack --mode development --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --watch server & webpack --mode development",
     "build": "webpack --mode production"
   },
-
   "dependencies": {
     "express": "^4.16.3",
     "nodemon": "^1.18.4",
