@@ -4,9 +4,9 @@ import { connect } from 'react-redux'
 import NormalTable from './NormalTable'
 
 export class NormalTableContainer extends Component {
-  static propTypes = {
-    prop: PropTypes
-  }
+  // static propTypes = {
+  //   prop: PropTypes
+  // }
 
   render() {
     return (

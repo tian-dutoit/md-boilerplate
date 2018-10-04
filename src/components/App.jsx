@@ -2,7 +2,7 @@ import React from 'react'
 import Example from './Example'
 // import PaginationTable from './PaginationTable'
 // import StyleTable from './StyleTable'
-// import SortTable from './SortTable'
+import SortTable from './SortTable'
 import { NormalTableContainer } from './NormalTableContainer';
 import { MatTableContainer } from './MatTableContainer';
 import "../main.css"
@@ -11,12 +11,12 @@ import "../main.css"
 const App = () => (
   <div className='app-container'>
     <Example /> 
-    {/* <PaginationTable /> 
-    <StyleTable /> 
-    <SortTable />  */}
+    {/* <PaginationTable />  */}
     <NormalTableContainer />
+    <SortTable />  
+    {/* <StyleTable /> */}
     <MatTableContainer />
   </div>
 )
 
-export default App
+export default App 

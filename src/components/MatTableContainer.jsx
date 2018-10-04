@@ -4,9 +4,9 @@ import { connect } from 'react-redux'
 import MatTable from './MatTable'
 
 export class MatTableContainer extends Component {
-  static propTypes = {
-    prop: PropTypes
-  }
+  // static propTypes = {
+  //   prop: PropTypes
+  // }
 
   render() {
     return (
