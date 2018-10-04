@@ -1,18 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableFooter from '@material-ui/core/TableFooter';
-import TablePagination from '@material-ui/core/TablePagination';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-import IconButton from '@material-ui/core/IconButton';
-import FirstPageIcon from '@material-ui/icons/FirstPage';
-import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
-import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
-import LastPageIcon from '@material-ui/icons/LastPage';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
+import Table from '@material-ui/core/Table'
+import TableBody from '@material-ui/core/TableBody'
+import TableCell from '@material-ui/core/TableCell'
+import TableFooter from '@material-ui/core/TableFooter'
+import TablePagination from '@material-ui/core/TablePagination'
+import TableRow from '@material-ui/core/TableRow'
+import Paper from '@material-ui/core/Paper'
+import IconButton from '@material-ui/core/IconButton'
+import FirstPageIcon from '@material-ui/icons/FirstPage'
+import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft'
+import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight'
+import LastPageIcon from '@material-ui/icons/LastPage'
 
 const actionsStyles = theme => ({
   root: {
@@ -20,30 +20,30 @@ const actionsStyles = theme => ({
     color: theme.palette.text.secondary,
     marginLeft: theme.spacing.unit * 2.5,
   },
-});
+})
 
 class TablePaginationActions extends React.Component {
   handleFirstPageButtonClick = event => {
-    this.props.onChangePage(event, 0);
-  };
+    this.props.onChangePage(event, 0)
+  }
 
   handleBackButtonClick = event => {
-    this.props.onChangePage(event, this.props.page - 1);
-  };
+    this.props.onChangePage(event, this.props.page - 1)
+  }
 
   handleNextButtonClick = event => {
-    this.props.onChangePage(event, this.props.page + 1);
-  };
+    this.props.onChangePage(event, this.props.page + 1)
+  }
 
   handleLastPageButtonClick = event => {
     this.props.onChangePage(
       event,
       Math.max(0, Math.ceil(this.props.count / this.props.rowsPerPage) - 1),
-    );
-  };
+    )
+  }
 
   render() {
-    const { classes, count, page, rowsPerPage, theme } = this.props;
+    const { classes, count, page, rowsPerPage, theme } = this.props
 
     return (
       <div className={classes.root}>
@@ -76,7 +76,7 @@ class TablePaginationActions extends React.Component {
           {theme.direction === 'rtl' ? <FirstPageIcon /> : <LastPageIcon />}
         </IconButton>
       </div>
-    );
+    )
   }
 }
 
@@ -87,16 +87,16 @@ TablePaginationActions.propTypes = {
   page: PropTypes.number.isRequired,
   rowsPerPage: PropTypes.number.isRequired,
   theme: PropTypes.object.isRequired,
-};
+}
 
 const TablePaginationActionsWrapped = withStyles(actionsStyles, { withTheme: true })(
   TablePaginationActions,
-);
+)
 
-let counter = 0;
+let counter = 0
 function createData(name, calories, fat) {
-  counter += 1;
-  return { id: counter, name, calories, fat };
+  counter += 1
+  return { id: counter, name, calories, fat }
 }
 
 const styles = theme => ({
@@ -110,7 +110,7 @@ const styles = theme => ({
   tableWrapper: {
     overflowX: 'auto',
   },
-});
+})
 
 class PaginationTable extends React.Component {
   state = {
@@ -131,20 +131,20 @@ class PaginationTable extends React.Component {
     ].sort((a, b) => (a.calories < b.calories ? -1 : 1)),
     page: 0,
     rowsPerPage: 5,
-  };
+  }
 
   handleChangePage = (event, page) => {
-    this.setState({ page });
-  };
+    this.setState({ page })
+  }
 
   handleChangeRowsPerPage = event => {
-    this.setState({ rowsPerPage: event.target.value });
-  };
+    this.setState({ rowsPerPage: event.target.value })
+  }
 
   render() {
-    const { classes } = this.props;
-    const { rows, rowsPerPage, page } = this.state;
-    const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
+    const { classes } = this.props
+    const { rows, rowsPerPage, page } = this.state
+    const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage)
 
     return (
       <Paper className={classes.root}>
@@ -160,7 +160,7 @@ class PaginationTable extends React.Component {
                     <TableCell numeric>{row.calories}</TableCell>
                     <TableCell numeric>{row.fat}</TableCell>
                   </TableRow>
-                );
+                )
               })}
               {emptyRows > 0 && (
                 <TableRow style={{ height: 48 * emptyRows }}>
@@ -184,12 +184,12 @@ class PaginationTable extends React.Component {
           </Table>
         </div>
       </Paper>
-    );
+    )
   }
 }
 
 PaginationTable.propTypes = {
   classes: PropTypes.object.isRequired,
-};
+}
 
-export default withStyles(styles)(PaginationTable);
+export default withStyles(styles)(PaginationTable)
